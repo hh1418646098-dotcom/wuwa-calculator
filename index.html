@@ -64,6 +64,50 @@
 .balanced-target-control>.hint{font-size:.75rem;line-height:1.8;margin:0}
 @media(max-width:760px){#balanced-plan-edit{margin-left:0;padding-left:0}.balanced-plan-panel>.panel-head{align-items:flex-start}.balanced-plan-panel>.char-actions>.field{max-width:none;width:100%;flex:1 1 100%}.balanced-plan-panel>.char-actions>.button{width:100%}.balanced-part-results{grid-template-columns:1fr}.balanced-recommendation .rec-item-score{flex-wrap:wrap}.balanced-recommendation .rec-feature-heading>div{min-width:0}.balanced-recommendation .balanced-reference-score{justify-content:flex-start}}
 
+.char-comparison-panel{scroll-margin-top:24px}
+#char-compare-result{scroll-margin-top:24px;outline:none}
+.compare-summary{border:1px solid #4d766e;border-radius:12px;padding:24px;background:linear-gradient(120deg,#1b3436,#15282e);overflow-wrap:anywhere}
+.compare-summary-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.compare-eyebrow,.compare-purpose{color:var(--muted);font-size:.8125rem}
+.compare-target{display:flex;align-items:center;gap:10px;font-size:.8125rem;max-width:100%}
+#character-workspace .compare-target select{width:auto;max-width:100%;min-height:36px;padding:5px 9px}
+.compare-verdict{margin:17px 0 8px;font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.45;color:var(--accent);letter-spacing:.01em}
+.compare-summary[data-winner=unavailable] .compare-verdict,.compare-summary[data-winner=tie] .compare-verdict{color:var(--text)}
+.compare-explanation{font-size:.875rem;line-height:1.8;margin:0;color:var(--text)}
+.compare-gain{margin:21px 0;display:grid;gap:7px}
+.compare-gain>span{font-size:.875rem;color:var(--muted)}
+.compare-gain>strong{font-size:clamp(1.4rem,2.7vw,2.1rem);line-height:1.4;font-variant-numeric:tabular-nums}
+.compare-gain>small{font-size:.75rem;line-height:1.65;color:var(--muted)}
+.compare-echoes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.compare-echo{min-width:0;border:1px solid var(--border);border-radius:8px;padding:15px 17px;background:#12232a}
+.compare-echo.is-recommended{border:2px solid var(--accent);padding:14px 16px;background:#1d3c38}
+.compare-echo-label{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.875rem}
+.compare-echo-label>span{font-size:.75rem;color:var(--muted)}
+.compare-echo.is-recommended .compare-echo-label>span{color:var(--accent);font-weight:700}
+.compare-echo-main{margin-top:13px;font-size:1rem}.compare-echo-main b{margin-left:7px}
+.compare-echo p{margin:7px 0 0;font-size:.75rem;color:var(--muted);line-height:1.7}
+.compare-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:20px 0 0}
+.compare-stats>div{min-width:0;display:grid;gap:6px;font-size:.8125rem;line-height:1.6}.compare-stats span{color:var(--muted)}.compare-stats strong{font-weight:500;font-variant-numeric:tabular-nums}
+.compare-energy{padding:10px 13px;border-left:3px solid var(--gold);background:#8c713c16;color:var(--gold);font-size:.8125rem;line-height:1.8;margin:18px 0 0}
+.compare-scope{font-size:.75rem;line-height:1.8;color:var(--muted);margin:16px 0 0}
+.compare-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin-top:14px}
+.compare-group{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);font-size:.875rem;min-width:0}
+.compare-group>span{min-width:0}.compare-group small{font-size:.75rem;color:var(--muted);margin-left:9px}.compare-group strong{text-align:right;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+@media(max-width:760px){.compare-summary{padding:17px 15px}.compare-summary-top{gap:9px}.compare-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.compare-echo{padding:12px}.compare-echo.is-recommended{padding:11px}.compare-echo-main{font-size:.9375rem}.compare-groups{grid-template-columns:1fr}.compare-group{font-size:.8125rem}.compare-gain{margin:17px 0}.compare-verdict{margin-top:14px}}
+@media(max-width:360px){.compare-echoes{grid-template-columns:1fr}.compare-group{flex-wrap:wrap;gap:5px}.compare-target{flex-wrap:wrap}}
+
+/* Qingxiao shares the decision-first comparison presentation. */
+#legacy-calculator .workspace{grid-template-columns:repeat(2,minmax(0,1fr))}
+#legacy-calculator .result-card{grid-column:1/-1;display:block}
+#legacy-calculator .result-card .computed{display:block}
+#result-title{scroll-margin-top:24px;outline:none}
+.qingxiao-comparison-details{margin-top:18px;border-top:1px solid var(--border);padding-top:13px}
+.qingxiao-comparison-details>summary{cursor:pointer;color:var(--muted);font-size:.875rem;line-height:1.7;padding:6px 0}
+.qingxiao-comparison-evidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:15px}
+.qingxiao-comparison-evidence>.metric-area,.qingxiao-comparison-evidence>.table-area{min-width:0}
+.qingxiao-comparison-evidence .table-title{margin-top:0}
+.qingxiao-reference-gain{border-bottom:1px solid var(--border);padding-bottom:18px}
+@media(max-width:760px){.qingxiao-comparison-evidence{grid-template-columns:1fr;gap:18px}#legacy-calculator .workspace{grid-template-columns:1fr}}
 /* The mobile views reuse the desktop forms and their saved state. */
 #mobile-nav,
 #mobile-action-bar,
@@ -849,7 +893,7 @@ details.mobile-current {
   <section class="panel char-section"><h2>当前声骸</h2><div id="char-old-echo"></div></section>
   <section class="panel char-section"><h2>候选声骸</h2><div id="char-new-echo"></div><div class="char-actions"><button id="char-compare" class="button primary" type="button">计算对比</button><button id="char-clear" class="button quiet" type="button">清空候选</button></div></section>
  </section>
- <section class="panel char-section"><h2>单件对比结果</h2><div id="char-compare-result" aria-live="polite"><p class="hint">填写面板和两件声骸后点击“计算对比”。</p></div></section>
+ <section class="panel char-section char-comparison-panel"><h2>这两件，选哪件？</h2><div id="char-compare-result" aria-live="polite"><p class="hint">填写面板和两件声骸后点击“计算对比”，这里会直接告诉你推荐哪件、换装后提升还是下降。</p></div></section>
 </section>
 
 <div id="legacy-calculator">
@@ -940,6 +984,8 @@ details.mobile-current {
   <div id="empty-result" class="empty-state"><svg class="empty-symbol" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 7h28v34H10zM17 16h14M17 24h6M17 32h6M28 28l3 4 6-8"/></svg><h3>等待你的第一组对比</h3><p>填入当前面板和两件声骸，<br>点击「计算对比」查看变化。</p></div>
   <div id="empty-summary" class="empty-summary"><div><span>参考循环总体提升</span><span>—</span></div><div><span>五类伤害的变化</span><span>—</span></div><div><span>新旧面板与属性差值</span><span>—</span></div></div>
   <div id="computed" class="computed" hidden>
+   <div id="qingxiao-compare-summary-host"></div>
+   <details id="qingxiao-compare-parts" class="qingxiao-comparison-details"><summary>查看伤害分项与属性明细</summary><div class="qingxiao-comparison-evidence">
    <div class="metric-area">
     <div class="metric"><div class="metric-heading"><div class="metric-title" id="metric-title">换装参考提升</div><span id="score-verdict" class="score-verdict"></span></div><small class="metric-basis" id="metric-basis">已核实增益 · 六链攻略配比</small><div id="main-metric" class="metric-value">—</div><p id="range-note" class="metric-note"></p></div>
     <div class="expectation-title">各类伤害变化</div><div class="expectation-list" id="expectation-list"></div>
@@ -947,6 +993,7 @@ details.mobile-current {
     <p class="result-note" id="result-basis-note"></p><p class="result-model-note">参考评分包含未模拟的条件，不用于断言实战唯一最优。共鸣效率只展示变化。</p>
    </div>
    <div class="table-area"><h3 class="table-title" id="table-title">计算使用的战斗属性</h3><button id="toggle-panel-view" type="button" class="button quiet table-view-button">查看脱战面板</button><div class="result-table-scroll"><table class="result-table"><thead><tr><th scope="col">属性</th><th scope="col">当前</th><th scope="col">替换后</th><th scope="col">变化</th></tr></thead><tbody id="result-rows"></tbody></table></div><div class="table-caption"><span class="hint">百分比属性的变化单位为百分点</span><button id="toggle-results" class="button quiet" type="button" aria-expanded="false">全部属性</button></div></div>
+   </div></details>
   </div>
   <div id="notices" class="notices" role="status" hidden></div>
  </section>
@@ -2278,14 +2325,15 @@ function renderComputed(){
  if(!scored){$('main-metric').innerHTML='<strong class="score-unavailable">仅显示分项变化</strong>';$('main-metric').className='metric-value neutral';$('main-metric').setAttribute('aria-label','非六链，不计算六链循环总体提升');$('score-verdict').textContent='未套用六链占比';$('score-verdict').className='score-verdict neutral';$('range-note').textContent='当前链数没有对应的循环占比，因此不显示总体评分。';}
  $('expectation-list').innerHTML=[['lib','共鸣解放','占比 31.15%'],['heavy','重击','占比 38.15%'],['basic','普攻','占比 26.45%～28.37% · 含巨阙灭迹'],['skill','共鸣技能','占比 2.34%'],['intro','变奏','占比 0%～1.92%']].map(([k,label,weight])=>`<div class="expectation-row"><span class="type-label"><span>${label}</span><small class="type-weight">${scored?weight:'未设定该链数循环占比'}</small></span><strong class="${tone(latest.parts[k])}">${percent(latest.parts[k])}</strong></div>`).join('');
  $('weight-rows').innerHTML=ROTATION.map(([label,weight])=>`<tr><td>${label}</td><td>${weight.toFixed(2)}%</td></tr>`).join('');
+ renderQingxiaoComparison();
 }
 function renderResult(){
  $('result-context').textContent=`候选替换位置 ${String(state.selected+1).padStart(2,'0')} 后`;
  $('errors').hidden=true;$('notices').hidden=true;
- if(!attempted){latest=null;$('computed').hidden=true;$('empty-result').hidden=false;$('empty-summary').hidden=false;return;}
+ if(!attempted){clearQingxiaoComparison();latest=null;$('computed').hidden=true;$('empty-result').hidden=false;$('empty-summary').hidden=false;return;}
  const slot=state.slots[state.selected];latest=calculate(state.panel,slot.current,slot.candidate,COSTS[state.selected],state.team);
  $('computed').hidden=!latest.ok;$('empty-result').hidden=true;$('empty-summary').hidden=true;
- if(!latest.ok){$('errors').innerHTML='<strong>还有几项需要确认</strong><ul>'+latest.errors.map(e=>'<li>'+escapeHTML(e)+'</li>').join('')+'</ul>';$('errors').hidden=false;}else renderComputed();
+ if(!latest.ok){clearQingxiaoComparison();$('errors').innerHTML='<strong>还有几项需要确认</strong><ul>'+latest.errors.map(e=>'<li>'+escapeHTML(e)+'</li>').join('')+'</ul>';$('errors').hidden=false;}else renderComputed();
  if(latest.notices.length){$('notices').innerHTML=latest.notices.map(n=>'<p>'+escapeHTML(n)+'</p>').join('');$('notices').hidden=false;}
 }
 function renderSelected(){const n=String(state.selected+1).padStart(2,'0');$('current-badge').textContent=`位置 ${n} · ${COSTS[state.selected]}C`;$('candidate-badge').textContent=`替换位置 ${n}`;renderSlots();renderEcho('current');renderEcho('candidate');renderResult();}
@@ -2836,6 +2884,30 @@ function recommendXinBalanced(result,config){
  return recommendCharacterBalanced(result,config,'damage');
 }
 
+// Compare two Echoes with the same weight-free objective used by main-stat
+// recommendations. Original within-part gains remain the displayed quantities.
+function summarizeCharacterComparison(result,config,target){
+ const selected=target===undefined?characterBalancedDefaultTarget(result?.id,config):target;
+ const rows=[...(result?.effects?.rows||[]),...(result?.effectsB?.rows||[])];
+ // A condition active on either side must stay in scope. If that changes a
+ // part from unavailable to available, its missing common baseline blocks the
+ // verdict instead of quietly removing the newly activated part.
+ const comparison={...result,effects:{...result?.effects,rows},combinations:[
+  {key:'current',eligible:true,changeCount:0,parts:Object.fromEntries(Object.keys(result?.parts||{}).map(id=>[id,0]))},
+  {key:'candidate',eligible:true,changeCount:1,parts:result?.parts}
+ ]};
+ const balanced=recommendCharacterBalanced(comparison,config,selected);
+ const output={ok:balanced.ok,target:selected,balanced,range:null,winner:'unavailable',status:'unavailable',counts:{better:0,worse:0,same:0}};
+ if(!balanced.ok)return output;
+ const gains=balanced.parts.map(part=>result.parts[part.id]),epsilon=1e-8;
+ const counts={better:gains.filter(gain=>gain>epsilon).length,worse:gains.filter(gain=>gain< -epsilon).length,same:gains.filter(gain=>Math.abs(gain)<=epsilon).length};
+ const status=counts.better&&counts.worse?'tradeoff':counts.better||counts.worse?'unanimous':'flat';
+ // Do not mistake the stable sorting preference for fewer changes for an
+ // actual advantage: every equal-loss, nondominated leader remains a tie.
+ const winner=balanced.leaders.length===1?balanced.leaders[0].key:'tie';
+ return {...output,range:{min:Math.min(...gains),max:Math.max(...gains)},winner,status,counts};
+}
+
 const CHARACTER_STORAGE_KEY='wuwa.character-panels.v1';
 let characterStore=null,characterAttempts={},characterSaveTimer=null;
 const characterResults={};
@@ -2893,7 +2965,7 @@ function readCharacterStore(){
    }});
    if(Number.isInteger(raw.selected)&&raw.selected>=0&&raw.selected<5)p.selected=raw.selected;
    for(const key of ['planER','recER','planPart','recPart'])p[key]=string(raw[key]);
-   for(const key of ['planTarget','recTarget'])if(['damage','healing'].includes(raw[key]))p[key]=raw[key];
+   for(const key of ['planTarget','recTarget','compareTarget'])if(['damage','healing'].includes(raw[key]))p[key]=raw[key];
    if(['auto','crit-min','zero'].includes(raw.planSubstats))p.planSubstats=raw.planSubstats;
   }
  }catch{next.restoreIssue=true;}
@@ -3083,12 +3155,16 @@ function renderCharacterComparison(){
  const p=currentCharacterProfile(),model=charModel(characterStore.active),s=p.slots[p.selected];
  const result=calculateCharacter(model.id,p.panel,s.current,s.candidate,CHARACTER_COSTS[p.selected],p.config);
  characterResults[model.id]??={};characterResults[model.id].compare=result;
+ delete characterResults[model.id].compareSummary;
  if(!result.ok){$('char-compare-result').innerHTML=charErrorHTML(result);return;}
  const keys=['atk','cr','cd','targetCd','er','element','common','basic','heavy','skill','lib',...(model.panelStats||[]),'hp','def','heal'];
  const table=(a,b)=>'<div class="char-table-wrap"><table class="char-table"><thead><tr><th>属性</th><th>当前</th><th>替换后</th><th>变化</th></tr></thead><tbody>'+keys.map(k=>{const x=a[k]===undefined?0:a[k],y=b[k]===undefined?0:b[k];return `<tr><td>${charLabel(k,model)}</td><td>${x===null?'未填':fmt(x,3)}</td><td>${y===null?'未计算':fmt(y,3)}</td><td>${x===null||y===null?'—':signed(y-x,3)}</td></tr>`;}).join('')+'</tbody></table></div>';
- $('char-compare-result').innerHTML='<p class="hint">同角色、同状态的具体伤害或治疗分项；按各自属性计算，不汇总为整轮总量。</p>'+charPartsHTML(result.parts)+
-  '<details class="char-details"'+(typeof window!=='undefined'&&typeof window.matchMedia==='function'&&window.matchMedia('(max-width: 760px)').matches?'':' open')+'><summary>计算使用的战斗属性</summary>'+table(result.combatA,result.combatB)+'</details><details class="char-details"><summary>脱战面板变化</summary>'+table(result.a,result.b)+'</details>'+
-  '<div class="notices">'+result.notices.map(n=>'<p>'+escapeHTML(n)+'</p>').join('')+'</div>';
+ const openDetails=new Set([...$('char-compare-result').querySelectorAll('details[open][id]')].map(node=>node.id));
+ $('char-compare-result').innerHTML=characterComparisonHTML(result,p)+
+  '<details id="char-compare-parts" class="char-details"><summary>查看逐项技能变化与计算说明</summary><p class="hint">所有百分比都是换成候选声骸后，相对当前声骸的变化；正数为提升，负数为下降。伤害与治疗分开比较，不相加为整轮总量。</p>'+charPartsHTML(result.parts)+
+  '<div class="notices">'+result.notices.map(n=>'<p>'+escapeHTML(n)+'</p>').join('')+'</div></details>'+
+  '<details id="char-compare-combat" class="char-details"><summary>查看计算使用的战斗属性</summary>'+table(result.combatA,result.combatB)+'</details><details id="char-compare-panel" class="char-details"><summary>查看脱战面板变化</summary>'+table(result.a,result.b)+'</details>';
+ for(const id of openDetails){const node=$(id);if(node)node.open=true;}
 }
 function refreshCharacterResults(){
  const attempts=characterAttempts[characterStore.active]||{};
@@ -3146,7 +3222,8 @@ function onCharacterInput(event){
   else {const item=part==='main'?echo.main:echo.subs[Number(e.dataset.index)];item[e.dataset.key]=e.value;
    if(part==='main'&&e.dataset.key==='stat'){item.value=String(CHARACTER_MAIN_VALUES[CHARACTER_COSTS[p.selected]][e.value]??'');renderCharacterEchoes();}}
   if(e.dataset.cecho==='current'&&part==='main')renderCharacterMains();
- }else if(e.dataset.cbalanced){p[e.dataset.cbalanced+'Target']=e.value;renderCharacterRecommendation(e.dataset.cbalanced,e.dataset.cbalanced==='plan');characterRestoreFocus(focus);scheduleCharacterSave();return;}
+ }else if(e.dataset.compareTarget!==undefined){p.compareTarget=e.value;renderCharacterComparison();characterRestoreFocus(focus);scheduleCharacterSave();return;}
+ else if(e.dataset.cbalanced){p[e.dataset.cbalanced+'Target']=e.value;renderCharacterRecommendation(e.dataset.cbalanced,e.dataset.cbalanced==='plan');characterRestoreFocus(focus);scheduleCharacterSave();return;}
  else if(e.dataset.csort){p[e.dataset.csort+'Part']=e.value;renderCharacterRecommendation(e.dataset.csort,false);characterRestoreFocus(focus);scheduleCharacterSave();return;}
  else relevant=false;
  if(!relevant)return;
@@ -3160,7 +3237,7 @@ function initCharacters(){
  $('char-team-preset').addEventListener('click',characterApplyTeamPreset);
  // Selects emit both input and change in browsers. Handling input once avoids
  // replacing a saved support twice or resetting a newly chosen effect.
- for(const [id,kind] of [['char-plan','plan'],['char-recommend','rec'],['char-compare','compare']])$(id).addEventListener('click',()=>{characterAttempts[characterStore.active]??={};characterAttempts[characterStore.active][kind]=true;if(kind==='compare')renderCharacterComparison();else renderCharacterRecommendation(kind);saveCharacters();});
+ for(const [id,kind] of [['char-plan','plan'],['char-recommend','rec'],['char-compare','compare']])$(id).addEventListener('click',()=>{characterAttempts[characterStore.active]??={};characterAttempts[characterStore.active][kind]=true;if(kind==='compare'){renderCharacterComparison();if(!window.matchMedia('(max-width:760px)').matches){const target=$('char-compare-result');target.setAttribute('tabindex','-1');target.focus({preventScroll:true});target.scrollIntoView({block:'start',behavior:'auto'});}}else renderCharacterRecommendation(kind);saveCharacters();});
  $('char-slots').addEventListener('click',e=>{const button=e.target.closest('[data-cslot]');if(!button)return;currentCharacterProfile().selected=Number(button.dataset.cslot);renderCharacterEchoes();if(characterAttempts[characterStore.active]?.compare)renderCharacterComparison();scheduleCharacterSave();});
  $('char-clear').addEventListener('click',()=>{const p=currentCharacterProfile();p.slots[p.selected].candidate=characterBlankEcho();renderCharacterEchoes();characterAttempts[characterStore.active]??={};characterAttempts[characterStore.active].compare=false;$('char-compare-result').innerHTML='<p class="hint">已清空当前位置的候选声骸。</p>';scheduleCharacterSave();});
  $('save').addEventListener('click',e=>{if(characterStore.active==='qingxiao')return;e.stopImmediatePropagation();clearTimeout(characterSaveTimer);saveCharacters(true);},true);
@@ -3304,11 +3381,133 @@ function renderBalancedRecommendation(kind,result,target){
  target.innerHTML=`<div class="balanced-recommendation" data-balanced-kind="${kind}">${html}</div>`;
 }
 
+// Put the decision before the detailed calculations. Gains remain per-part ratios.
+function characterComparisonPercent(value){
+ if(Math.abs(value)<1e-8)return '0.00%';
+ return (value>0?'+':'−')+(Math.abs(value)<.005?'＜0.01':Math.abs(value).toFixed(2))+'%';
+}
+function characterComparisonRange(range){
+ if(!range)return '暂不能比较';
+ const low=characterComparisonPercent(range.min),high=characterComparisonPercent(range.max);
+ return low===high?low:low+' ～ '+high;
+}
+function characterComparisonHTML(result,profile){
+ const model=charModel(result.id),targets=characterBalancedTargets(result.id,profile.config);
+ const target=targets.some(item=>item.id===profile.compareTarget)?profile.compareTarget:characterBalancedDefaultTarget(result.id,profile.config);
+ const summary=summarizeCharacterComparison(result,profile.config,target),label=target==='healing'?'治疗':'伤害';
+ characterResults[result.id].compareSummary=summary;
+ const erChange=result.b.er-result.a.er,erFalls=erChange<-1e-8;
+ const names={current:'当前声骸',candidate:'候选声骸'},winner=summary.winner;
+ let title=winner==='candidate'?'推荐换成候选声骸':winner==='current'?'推荐保留当前声骸':winner==='tie'?`已计算${label}持平，可保留当前`:'暂不能判断哪件更好';
+ let explanation=summary.status==='unanimous'?`候选在已计算的${label}分项上${winner==='candidate'?'更好':'更差'}${summary.counts.same?'，其余分项持平':''}。`:`已计算的${label}分项没有变化，可结合充能与生存需求选择。`;
+ if(summary.status==='tradeoff'){
+  title=winner==='tie'?'各有优势，没有明确胜者':'各有优势，均衡比较选'+names[winner];
+  explanation=`${summary.counts.better} 项提升、${summary.counts.worse} 项下降。`+(winner==='tie'?'两件的最大分项损失相同，按常用技能选择。':'按最吃亏的分项也尽量少损失的原则，'+names[winner]+'更合适；可展开明细核对常用技能。');
+ }
+ if(!summary.ok)explanation=summary.balanced.status==='no-parts'?`当前条件下没有可比较的${label}分项，请核对触发条件与未计算说明。`:'有影响判断的分项缺少有效数据，请展开明细核对；未计算的项目不会当作零收益。';
+ if(winner==='candidate'&&erFalls)title=summary.status==='tradeoff'?'均衡比较倾向候选，先确认充能':'候选'+label+'更优，先确认充能';
+ const metricTone=summary.range?(summary.range.min>=-1e-8&&summary.range.max>1e-8?'positive':summary.range.max<=1e-8&&summary.range.min<-1e-8?'negative':'neutral'):'neutral';
+ const targetPicker=targets.length>1?`<label class="compare-target"><span>比较用途</span><select id="char-compare-target" data-compare-target>${charOptions(targets.map(item=>[item.id,item.id==='healing'?'治疗效果':'伤害输出']),target)}</select></label>`:`<span class="compare-purpose">${label==='治疗'?'治疗效果':'伤害输出'}</span>`;
+ const slot=profile.slots[profile.selected];
+ const cards=['current','candidate'].map(side=>{
+  const echo=slot[side],chosen=winner===side;
+  return `<div class="compare-echo${chosen?' is-recommended':''}"><div class="compare-echo-label"><strong>${names[side]}</strong><span>${chosen?(erFalls&&side==='candidate'?'充能够用时推荐':'推荐这件'):winner==='tie'?(summary.status==='tradeoff'?'各有优势':label+'持平'):side==='current'?'比较基准':'替换预览'}</span></div><div class="compare-echo-main">${escapeHTML(charLabel(echo.main.stat,model))} <b>${fmt(Number(echo.main.value),2)}%</b></div><p>${escapeHTML(echo.name||'位置 '+(profile.selected+1)+' · '+CHARACTER_COSTS[profile.selected]+'C · 未命名')}</p></div>`;
+ }).join('');
+ const scale=target==='healing'?model.parts.find(part=>part.kind==='healing')?.scaling:model.parts.find(part=>part.id===summary.balanced?.parts[0]?.id)?.scaling;
+ const primary=['hp','def'].includes(scale)?scale:'atk';
+ const statKeys=[primary,...(target==='healing'?['heal']:['cr','cd']),'er'];
+ const stats=statKeys.map(key=>{
+  const a=result.combatA[key],b=result.combatB[key],known=Number.isFinite(a)&&Number.isFinite(b),unit=['atk','hp','def'].includes(key)?'':'%';
+  return `<div><span>${escapeHTML(({atk:'战斗攻击',hp:'战斗生命',def:'战斗防御',cr:'战斗暴击',cd:'战斗暴伤',heal:'治疗加成',er:'共鸣效率'})[key])}</span><strong>${known?fmt(a,2)+unit+' → '+fmt(b,2)+unit:'未填完整'}</strong></div>`;
+ }).join('');
+ const erNote=erFalls?`<p class="compare-energy">共鸣效率降低 ${fmt(-erChange,2)} 个百分点（${fmt(result.a.er,2)}% → ${fmt(result.b.er,2)}%）。如果当前刚好够用，优先保留当前声骸；以上收益未计入充能不足造成的循环损失。</p>`:'';
+ const excluded=(summary.balanced?.excludedParts||[]).filter(part=>!['other-target','fixed','condition'].includes(part.code));
+ const scope=(targets.length>1?'这里只比较当前角色自身的'+label+'，不评价传给队友的增益。':'')+(excluded.length?`另有 ${excluded.length} 项未纳入结论：${excluded.slice(0,2).map(part=>part.label).join('、')}${excluded.length>2?'等':''}。`:'');
+ const parts=summary.balanced?.parts||[],groups=new Map();
+ for(const item of parts){
+  const part=model.parts.find(part=>part.id===item.id),key=part.kind==='healing'?'healing':part.type;
+  if(!Number.isFinite(result.parts[item.id]))continue;
+  if(!groups.has(key))groups.set(key,[]);groups.get(key).push(result.parts[item.id]);
+ }
+ const groupNames={basic:'普攻伤害',heavy:'重击伤害',skill:'技能伤害',lib:'解放伤害',intro:'变奏伤害',outro:'延奏伤害',echo:'声骸伤害',healing:'治疗量'};
+ const groupRows=summary.ok?[...groups].map(([key,values])=>{
+  const min=Math.min(...values),max=Math.max(...values),state=min>=-1e-8&&max>1e-8?'提升':max<=1e-8&&min<-1e-8?'下降':min<-1e-8&&max>1e-8?'有升有降':'持平';
+  return `<div class="compare-group"><span>${escapeHTML(groupNames[key]||key)}<small>${state}</small></span><strong class="${state==='提升'?'positive':state==='下降'?'negative':'neutral'}">${characterComparisonRange({min,max})}</strong></div>`;
+ }).join(''):'';
+ return `<div id="char-compare-summary" class="compare-summary" data-winner="${winner}"><div class="compare-summary-top"><span class="compare-eyebrow">位置 ${profile.selected+1} · ${CHARACTER_COSTS[profile.selected]}C · 其余四件不变</span>${targetPicker}</div><h3 class="compare-verdict">${title}</h3><p class="compare-explanation">${explanation}</p><div class="compare-gain"><span>换成候选后，已计算${label}分项变化</span><strong class="${metricTone}">${characterComparisonRange(summary.range)}</strong><small>相对当前声骸；范围表示不同分项的变化，不是整轮总${label}。</small></div><div class="compare-echoes">${cards}</div><div class="compare-stats">${stats}</div>${erNote}<p class="compare-scope">结论按当前角色、队伍与已选条件计算。${escapeHTML(scope)}</p></div>`+
+  (groupRows?'<div class="compare-groups" aria-label="各类效果变化">'+groupRows+'</div>':'')+
+  (summary.status==='tradeoff'&&summary.ok?`<details class="char-details" id="char-compare-basis"><summary>为什么这样推荐？</summary><p class="hint">每项分别以两件中表现更好的那件为基准，比较最不利分项损失：当前 ${fmt(summary.balanced.ranked.find(row=>row.key==='current').balance.loss,2)}%，候选 ${fmt(summary.balanced.ranked.find(row=>row.key==='candidate').balance.loss,2)}%。损失越小越均衡；不预设技能次数或循环占比。</p></details>`:'');
+}
+
+// Decision-first presentation for the legacy Qingxiao calculator. This reads
+// the existing calculation result and never changes damage, rotation or saves.
+let qingxiaoCompareSummary=null;
+function summarizeQingxiaoComparison(result){
+ const gains=['lib','heavy','basic','skill','intro'].map(key=>result?.parts?.[key]),epsilon=1e-8;
+ const output={ok:false,winner:'unavailable',status:'unavailable',range:null,counts:{better:0,worse:0,same:0},loss:{current:null,candidate:null},reference:null};
+ if(!result?.ok||gains.some(value=>!Number.isFinite(value)||value<=-100))return output;
+ const counts={better:gains.filter(value=>value>epsilon).length,worse:gains.filter(value=>value< -epsilon).length,same:gains.filter(value=>Math.abs(value)<=epsilon).length};
+ const status=counts.better&&counts.worse?'tradeoff':counts.better||counts.worse?'unanimous':'flat';
+ // For each category, normalize both Echoes to the better one's value.
+ // This is a category loss, not an assumed rotation weight or total damage.
+ const loss={current:Math.max(...gains.map(value=>value>0?100*value/(100+value):0)),candidate:Math.max(...gains.map(value=>value<0?-value:0))};
+ let winner=counts.better&&!counts.worse?'candidate':counts.worse&&!counts.better?'current':Math.abs(loss.current-loss.candidate)<=epsilon?'tie':loss.current<loss.candidate?'current':'candidate';
+ let reference=null;
+ if(result.reference){
+  const {lower,upper}=result.reference;
+  if(!Number.isFinite(lower)||!Number.isFinite(upper)||lower>upper)return output;
+  reference={min:lower,max:upper};
+  winner=lower>=0&&upper>0?'candidate':upper<=0&&lower<0?'current':'tie';
+ }
+ return {...output,ok:true,winner,status,range:{min:Math.min(...gains),max:Math.max(...gains)},counts,loss,reference};
+}
+function qingxiaoComparisonHTML(result,profile){
+ const summary=summarizeQingxiaoComparison(result),names={current:'当前声骸',candidate:'候选声骸'},winner=summary.winner;
+ qingxiaoCompareSummary=summary;
+ const erChange=result.b.er-result.a.er,erFalls=erChange< -1e-8,chain=result.buffs?.team.qingxiao.chain??profile.team.qingxiao.chain;
+ let title=winner==='candidate'?'推荐换成候选声骸':winner==='current'?'推荐保留当前声骸':winner==='tie'?'已计算伤害持平，可保留当前':'暂不能判断哪件更好';
+ let explanation=summary.status==='unanimous'?`候选在已计算的伤害分项上${winner==='candidate'?'更好':'更差'}${summary.counts.same?'，其余分项持平':''}。`:'已计算的伤害分项没有变化，可结合充能与生存需求选择。';
+ if(summary.status==='tradeoff'){
+  title=winner==='tie'?'各有优势，没有明确胜者':'各有优势，均衡比较选'+names[winner];
+  explanation=`${summary.counts.better} 类伤害提升、${summary.counts.worse} 类下降。`+(winner==='tie'?'两件的最大分项损失相同，按常用技能选择。':'按最吃亏的分项也尽量少损失的原则，'+names[winner]+'更合适；可展开明细核对常用技能。');
+ }
+ if(summary.reference){
+  const {min,max}=summary.reference;
+  title=winner==='candidate'?'六链攻略参考：推荐候选声骸':winner==='current'?'六链攻略参考：推荐保留当前':min===0&&max===0?'六链攻略参考持平，可保留当前':'六链攻略参考有升有降，暂不建议换装';
+  explanation=(summary.status==='tradeoff'?`${summary.counts.better} 类伤害提升、${summary.counts.worse} 类下降。`:'')+(winner==='tie'?(min===0&&max===0?'按已有六链攻略占比加权后持平。':'未拆分伤害的两种归类给出不同方向，无法据此确定哪件更好。'):`按已有六链攻略占比加权，${names[winner]}的参考收益更好。`)+(min===0&&max>0?'其中一种归类持平，另一种提升。':max===0&&min<0?'其中一种归类持平，另一种下降。':'');
+ }
+ if(!summary.ok)explanation='有影响判断的伤害分项缺少有效数据，请展开明细核对。';
+ if(winner==='candidate'&&erFalls)title=summary.reference?'六链攻略参考倾向候选，先确认充能':summary.status==='tradeoff'?'均衡比较倾向候选，先确认充能':'候选伤害更优，先确认充能';
+ const metricTone=summary.range?(summary.range.min>=-1e-8&&summary.range.max>1e-8?'positive':summary.range.max<=1e-8&&summary.range.min< -1e-8?'negative':'neutral'):'neutral';
+ const referenceMetric=summary.reference?`<div class="compare-gain qingxiao-reference-gain"><span>六链攻略占比下的参考变化</span><strong class="${winner==='candidate'?'positive':winner==='current'?'negative':'neutral'}">${characterComparisonRange(summary.reference)}</strong><small>只沿用已有六链攻略占比，未按你的配装校准，不是你的实际整轮提升。</small></div>`:'';
+ const slot=profile.slots[profile.selected],cards=['current','candidate'].map(side=>{
+  const echo=slot[side],chosen=winner===side;
+  const tag=chosen?(erFalls&&side==='candidate'?'充能够用时推荐':summary.reference?'攻略参考推荐':'推荐这件'):winner==='tie'?(summary.status==='flat'?'伤害持平':summary.reference?'暂不确定':'各有优势'):side==='current'?'比较基准':'替换预览';
+  return `<div class="compare-echo${chosen?' is-recommended':''}"><div class="compare-echo-label"><strong>${names[side]}</strong><span>${tag}</span></div><div class="compare-echo-main">${escapeHTML(META[echo.main.stat]?.[0]||echo.main.stat)} <b>${fmt(Number(echo.main.value),2)}${META[echo.main.stat]?.[1]||''}</b></div><p>${escapeHTML(echo.name||'位置 '+(profile.selected+1)+' · '+COSTS[profile.selected]+'C · 未命名')}</p></div>`;
+ }).join('');
+ const stats=[['atk','战斗攻击',''],['cr','战斗暴击','%'],['cd','战斗暴伤','%'],['er','共鸣效率','%']].map(([key,label,unit])=>`<div><span>${label}</span><strong>${fmt(result.combatA[key],2)}${unit} → ${fmt(result.combatB[key],2)}${unit}</strong></div>`).join('');
+ const erNote=erFalls?`<p class="compare-energy">共鸣效率降低 ${fmt(-erChange,2)} 个百分点（${fmt(result.a.er,2)}% → ${fmt(result.b.er,2)}%）。如果当前刚好够用，优先保留当前声骸；以上收益未计入充能不足造成的循环损失。</p>`:'';
+ const basis=summary.ok&&summary.status==='tradeoff'&&!summary.reference?`<details class="weights-details qingxiao-compare-basis"><summary>为什么这样推荐？</summary><p>每类伤害分别以两件中表现更好的那件为基准，比较最不利分项损失：当前 ${fmt(summary.loss.current,2)}%，候选 ${fmt(summary.loss.candidate,2)}%。损失越小越均衡；不预设技能次数或循环占比。</p></details>`:'';
+ return `<div id="qingxiao-compare-summary" class="compare-summary" data-winner="${winner}"><div class="compare-summary-top"><span class="compare-eyebrow">位置 ${profile.selected+1} · ${COSTS[profile.selected]}C · 其余四件不变</span><span class="compare-purpose">清宵 ${chain} 链 · 伤害输出</span></div><h3 class="compare-verdict">${title}</h3><p class="compare-explanation">${explanation}</p>${referenceMetric}<div class="compare-gain"><span>换成候选后，已计算伤害分项变化</span><strong class="${metricTone}">${characterComparisonRange(summary.range)}</strong><small>相对当前声骸；范围表示不同分项的变化，不是整轮总伤害。</small></div><div class="compare-echoes">${cards}</div><div class="compare-stats">${stats}</div>${erNote}<p class="compare-scope">结论按当前角色、队伍与已选条件计算。${summary.reference?'六链参考评分沿用原计算口径。':'当前链数没有对应的循环占比，仅按已计算分项比较。'}清宵心识与六链的部分特殊增伤尚未自动纳入。</p></div>${basis}`;
+}
+function renderQingxiaoComparison(){
+ const host=$('qingxiao-compare-summary-host'),basisOpen=host.querySelector('.qingxiao-compare-basis')?.open;
+ host.innerHTML=qingxiaoComparisonHTML(latest,state);
+ if(basisOpen&&host.querySelector('.qingxiao-compare-basis'))host.querySelector('.qingxiao-compare-basis').open=true;
+}
+function clearQingxiaoComparison(){
+ qingxiaoCompareSummary=null;$('qingxiao-compare-summary-host').innerHTML='';
+}
+function locateQingxiaoComparison(){
+ if(window.matchMedia('(max-width:760px)').matches)return;
+ const target=$('result-title');target.tabIndex=-1;target.scrollIntoView({block:'start',behavior:'auto'});target.focus({preventScroll:true});
+}
+
 document.addEventListener('input',onInput);
 document.addEventListener('change',event=>{if(event.target.tagName==='SELECT')onInput(event);});
 $('slots').addEventListener('click',event=>{const b=event.target.closest('[data-slot]');if(!b)return;state.selected=Number(b.dataset.slot);const s=state.slots[state.selected];attempted=echoTouched(s.current)&&echoTouched(s.candidate);renderSelected();scheduleSave();});
 $('save').addEventListener('click',()=>{clearTimeout(saveTimer);save(true);});
-$('calculate').addEventListener('click',()=>{attempted=true;renderResult();save();if(latest?.ok)announce('已更新当前位置的对比结果');else announce('请按输入提示补全项目');});
+$('calculate').addEventListener('click',()=>{attempted=true;renderResult();save();if(latest?.ok){announce('已更新当前位置的对比结果');locateQingxiaoComparison();}else announce('请按输入提示补全项目');});
 $('clear-candidate').addEventListener('click',()=>{state.slots[state.selected].candidate=blankEcho();attempted=false;renderEcho('candidate');renderResult();scheduleSave();announce('已清空当前位置的候选声骸');});
 $('toggle-panel-view').addEventListener('click',()=>{showCombat=!showCombat;if(latest?.ok)renderComputed();});
 $('toggle-results').addEventListener('click',()=>{showAll=!showAll;if(latest?.ok)renderComputed();});
